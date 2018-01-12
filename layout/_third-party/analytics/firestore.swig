@@ -1,6 +1,7 @@
 {% if theme.firestore.enable %}
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  {% set firebasejs_uri = url_for(theme.vendors._internal + '/vendors/firebasejs/4.6.0') %}
+  <script src="{{ firebasejs_uri }}/firebase.js"></script>
+  <script src="{{ firebasejs_uri }}/firebase-firestore.js"></script>
   {% if theme.firestore.bluebird %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.core.min.js"></script>
   {% endif %}

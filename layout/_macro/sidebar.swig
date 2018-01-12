@@ -7,6 +7,12 @@
     </div>
   </div>
 
+  {% if page.sidebar %}
+    <script type="text/javascript">
+      var page = { sidebar: true };
+    </script>
+  {% endif %}
+
   <aside id="sidebar" class="sidebar">
     {% if theme.sidebar.onmobile %}
       <div id="sidebar-dimmer"></div>

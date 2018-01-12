@@ -133,7 +133,7 @@
                 </a>
               </span>
             {% elseif theme.disqus.enable and theme.disqus.count %}
-              <span class="post-comments-count">
+              <span class="post-comments-count" style="display: none">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
