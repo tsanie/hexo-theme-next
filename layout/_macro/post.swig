@@ -121,6 +121,63 @@
             </span>
           {% endif %}
 
+          {# LeanCould PageView #}
+          {% if theme.leancloud_visitors.enable %}
+             <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               {% if theme.post_meta.item_text %}
+                 <span class="post-meta-item-text">{{__('post.visitors')}}&#58;</span>
+               {% endif %}
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          {% endif %}
+
+          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>{{ theme.busuanzi_count.page_pv_footer }}
+            </span>
+          {% endif %}
+
+          {% if config.symbols_count_time.symbols or config.symbols_count_time.time %}
+            <div class="post-wordcount">
+              {% if not theme.symbols_count_time.separated_meta %}
+                <span class="post-meta-divider">|</span>
+              {% endif %}
+
+              {% if config.symbols_count_time.symbols %}
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                {% if theme.symbols_count_time.item_text_post %}
+                  <span class="post-meta-item-text">{{ __('post.wordcount') }}&#58;</span>
+                {% endif %}
+                <span title="{{ __('post.wordcount') }}">{#
+                #}{{ symbolsCount(post.content) }}{#
+              #}</span>
+              {% endif %}
+
+              {% if config.symbols_count_time.symbols and config.symbols_count_time.time %}
+                <span class="post-meta-divider">|</span>
+              {% endif %}
+
+              {% if config.symbols_count_time.time %}
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                {% if theme.symbols_count_time.item_text_post %}
+                  <span class="post-meta-item-text">{{ __('post.min2read') }} &asymp;</span>
+                {% endif %}
+                <span title="{{ __('post.min2read') }}">{#
+                #}{{ symbolsTime(post.content, theme.symbols_count_time.awl, theme.symbols_count_time.wpm) }}{#
+              #}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+
           {% if post.comments %}
             {% if theme.facebook_comments_plugin.enable %}
               <span class="post-comments-count">
@@ -191,63 +248,6 @@
                 </a>
               </span>
             {% endif %}
-          {% endif %}
-
-          {# LeanCould PageView #}
-          {% if theme.leancloud_visitors.enable %}
-             <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               {% if theme.post_meta.item_text %}
-                 <span class="post-meta-item-text">{{__('post.visitors')}}&#58;</span>
-               {% endif %}
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          {% endif %}
-
-          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>{{ theme.busuanzi_count.page_pv_footer }}
-            </span>
-          {% endif %}
-
-          {% if config.symbols_count_time.symbols or config.symbols_count_time.time %}
-            <div class="post-wordcount">
-              {% if not theme.symbols_count_time.separated_meta %}
-                <span class="post-meta-divider">|</span>
-              {% endif %}
-
-              {% if config.symbols_count_time.symbols %}
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                {% if theme.symbols_count_time.item_text_post %}
-                  <span class="post-meta-item-text">{{ __('post.wordcount') }}&#58;</span>
-                {% endif %}
-                <span title="{{ __('post.wordcount') }}">{#
-                #}{{ symbolsCount(post.content) }}{#
-              #}</span>
-              {% endif %}
-
-              {% if config.symbols_count_time.symbols and config.symbols_count_time.time %}
-                <span class="post-meta-divider">|</span>
-              {% endif %}
-
-              {% if config.symbols_count_time.time %}
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                {% if theme.symbols_count_time.item_text_post %}
-                  <span class="post-meta-item-text">{{ __('post.min2read') }} &asymp;</span>
-                {% endif %}
-                <span title="{{ __('post.min2read') }}">{#
-                #}{{ symbolsTime(post.content, theme.symbols_count_time.awl, theme.symbols_count_time.wpm) }}{#
-              #}</span>
-              {% endif %}
-            </div>
           {% endif %}
 
           {% if post.description and (not theme.excerpt_description or not is_index) %}
