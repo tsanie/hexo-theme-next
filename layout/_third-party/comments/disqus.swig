@@ -18,7 +18,7 @@
           }
         };
         xhr.ontimeout = function () { xhr.abort(); };
-        xhr.send(null);
+        setTimeout(function () { xhr.send(null); }, 0);
       });
     </script>
   {% endif %}
@@ -30,29 +30,31 @@
         this.page.identifier = '{{ page.path }}';
         this.page.title = '{{ page.title| addslashes }}';
       };
-
-      function loadDisqus() {
+      function loadComments () {
         var d = document, s = d.createElement('script');
         s.src = 'https://{{theme.disqus.shortname}}.disqus.com/embed.js';
         s.setAttribute('data-timestamp', '' + +new Date());
         (d.head || d.body).appendChild(s);
       }
-
-      $(function () {
-        var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
-
-        if (contentVisibilityHeight <= $(document.body).height()) {
-          loadDisqus();
-        } else {
-          $(window).on('scroll.disqus_scroll', function () {
-            var scrollTop = $(window).scrollTop();
-            if (scrollTop >= contentVisibilityHeight) {
-              $(window).off('.disqus_scroll');
-              loadDisqus();
-            }
-          });
-        }
-      });
+      {% if theme.disqus.lazyload %}
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      {% else %}
+        loadComments();
+      {% endif %}
     </script>
   {% endif %}
 
