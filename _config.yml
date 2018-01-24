@@ -53,7 +53,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "Hexo, NexT, Tsanie"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -63,7 +63,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2017
 
   # Icon between year and copyright info.
   icon: user
@@ -111,9 +111,9 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -129,8 +129,8 @@ menu_settings:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
 
@@ -147,11 +147,11 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+social:
+  GitHub: https://github.com/tsanie || github
+  E-Mail: mailto:me@tsanie.us || envelope
   #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
+  Twitter: https://twitter.com/tsorgy || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
@@ -168,7 +168,7 @@ social_icons:
 # Usage: `permalink || title`
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the title and aria-label name.
-#github_banner: https://github.com/yourname || Follow me on GitHub
+github_banner: https://github.com/tsanie || Follow me on GitHub
 
 # Blog rolls
 links_icon: link
@@ -181,7 +181,7 @@ links_layout: block
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: /images/uploads/avatar.png
 
 # Table Of Contents in the Sidebar
 toc:
@@ -258,8 +258,8 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
-  separated_meta: true
-  item_text_post: true
+  separated_meta: false
+  item_text_post: false
   item_text_total: false
   awl: 5
   wpm: 200
@@ -278,7 +278,7 @@ symbols_count_time:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a>
 
 
@@ -308,7 +308,7 @@ custom_logo:
 highlight_theme: normal
 
 # Enable "cheers" for archive page.
-cheers_enabled: true
+cheers_enabled: false
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -323,10 +323,11 @@ cheers_enabled: true
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
-  host:
+  host: #//fonts.tsanie.us
+  #host: //fonts.proxy.ustclug.org
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -335,34 +336,34 @@ font:
 
   # Global font settings used on <body> element.
   global:
-    external: true
+    external: false
     family: Lato
     size:
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
   # Fallback to `global` font settings.
   headings:
-    external: true
+    external: false
     family:
     size:
 
   # Font settings for posts.
   # Fallback to `global` font settings.
   posts:
-    external: true
+    external: false
     family:
 
   # Font settings for Logo.
   # Fallback to `global` font settings.
   logo:
-    external: true
+    external: false
     family:
     size:
 
   # Font settings for <code> and code blocks.
   codes:
-    external: true
-    family:
+    external: false
+    family: PT Mono
     size:
 
 
@@ -416,10 +417,10 @@ pangu: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
-  count: true
-  lazyload: false
+  enable: true
+  shortname: tsanie
+  count: false
+  lazyload: true
 
 # Hypercomments
 #hypercomments_id:
@@ -659,7 +660,7 @@ local_search:
 # Bookmark Support
 # Dependencies: https://github.com/theme-next/theme-next-bookmark
 bookmark:
-  enable: false
+  enable: true
   # if auto
   #   - save the reading position when closing the page
   #   - or clicking the bookmark-icon
@@ -716,7 +717,7 @@ reading_progress:
 
 # Use velocity to animate everything.
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # Transition variants:
@@ -749,7 +750,7 @@ lazyload: false
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
@@ -804,12 +805,15 @@ vendors:
   _internal: lib
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: #https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js
+  #jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
+  fancybox: #https://cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js
+  fancybox_css: #https://cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css
+  #fancybox: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js
+  #fancybox_css: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
@@ -821,11 +825,13 @@ vendors:
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity:
+  velocity: #https://cdn.bootcss.com/velocity/1.5.1/velocity.min.js
+  #velocity: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity_ui:
+  velocity_ui: #https://cdn.bootcss.com/velocity/1.5.1/velocity.ui.min.js
+  #velocity_ui: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.ui.min.js
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
@@ -833,7 +839,8 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome:
+  fontawesome: #https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
+  #fontawesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
@@ -847,6 +854,8 @@ vendors:
   # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
   pace:
   pace_css:
+  #pace: https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
+  #pace_css: https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-minimal.css
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
