@@ -2,7 +2,7 @@
 
   {% set font_config = theme.font %}
   {% set font_families = '' %}
-  {% set font_styles = ':300,300italic,400,400italic,700,700italic' %}
+  {% set font_styles = ':400,400italic,700,700italic' %}
   {% set font_found = false %}
 
   {% if font_config.global.family and font_config.global.external %}
