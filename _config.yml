@@ -326,7 +326,7 @@ font:
   enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
-  host: #//fonts.tsanie.us
+  host: //fonts.tsanie.us
   #host: //fonts.proxy.ustclug.org
 
   # Font options:
@@ -336,7 +336,7 @@ font:
 
   # Global font settings used on <body> element.
   global:
-    external: false
+    external: true
     family: Lato
     size:
 
@@ -362,7 +362,7 @@ font:
 
   # Font settings for <code> and code blocks.
   codes:
-    external: false
+    external: true
     family: PT Mono
     size:
 
