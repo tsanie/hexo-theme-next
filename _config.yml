@@ -130,9 +130,9 @@ menu_settings:
 
 # Schemes
 #scheme: Muse
-scheme: Mist
+#scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -317,7 +317,7 @@ cheers_enabled: false
 # Manual define the max content width
 # !!Only available for Gemini Scheme currently
 # Leave it empty for the default 75% (suggest not less than 1000px)
-#max_content_width: 1000px
+max_content_width: 1000px
 
 # ---------------------------------------------------------------
 # Font Settings
