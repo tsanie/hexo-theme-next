@@ -130,9 +130,9 @@ menu_settings:
 
 # Schemes
 #scheme: Muse
-#scheme: Mist
+scheme: Mist
 #scheme: Pisces
-scheme: Gemini
+#scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -284,7 +284,7 @@ symbols_count_time:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: true
-  title:
+  title: 相关文章
   params:
     maxCount: 5
     #ulClass: 'popular-posts'
