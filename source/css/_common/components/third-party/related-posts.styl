@@ -1,18 +1,21 @@
 ul.popular-posts {
   padding: 0;
 
-  .popular-posts-item {
-    list-style: none;
+  &:before {
+    content: hexo-config('related_posts.title') || 'Related Posts';
+    margin-top: $post-eof-margin-bottom;
+    font-size: $font-size-headings-base;
+    border-bottom: 2px solid $note-default-border;
+    display: block;
+  }
 
+  .popular-posts-item {
+    // list-style: none;
+    margin-left: 2em;
     .popular-posts-title {
       display: block;
-
       h3 {
         font-weight: normal;
-
-        a {
-          text-decoration: none;
-        }
       }
     }
   }
