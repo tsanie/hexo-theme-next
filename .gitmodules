@@ -1,6 +1,3 @@
-[submodule "source/lib/bookmark"]
-	path = source/lib/bookmark
-	url = https://github.com/theme-next/theme-next-bookmark.git
 [submodule "source/lib/pace"]
 	path = source/lib/pace
 	url = https://github.com/tsanie/theme-next-pace.git
