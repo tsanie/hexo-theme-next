@@ -912,7 +912,7 @@ vendors:
   # bookmark
   # Internal version: 1.0.0
   # https://github.com/theme-next/theme-next-bookmark
-  bookmark:
+  bookmark: https://cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1.0.0/bookmark.min.js
 
 
 # Assets
