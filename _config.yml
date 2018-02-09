@@ -155,7 +155,7 @@ social:
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
-  #YouTube: https://youtube.com/yourname || youtube
+  YouTube: https://youtube.com/user/Tsorgy || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
 
@@ -284,6 +284,7 @@ symbols_count_time:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: true
+  title: 相关文章 # custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
